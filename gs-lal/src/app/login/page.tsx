@@ -50,10 +50,10 @@ export default function Login() {
                 
                 <div className="flex justify-center mt-8"> 
                     <Link
-                        href="/criar-conta"
+                        href="/cadastro"
                         className="text-[#505050] text-sm font-semibold hover:text-[#7a7a64] transition-colors"
                     >
-                        NÃO POSSUO CONTA
+                        NÃO POSSUO CADASTRO
                     </Link>
                 </div>
 
