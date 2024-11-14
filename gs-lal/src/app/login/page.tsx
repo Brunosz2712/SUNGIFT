@@ -6,7 +6,7 @@ export default function Login() {
             
             
             <div className="mb-12">
-                <h1 className="text-4xl text-[#97987E] font-semibold font-roboto">ENTRAR</h1>
+            <h1 className="text-5xl font-bold text-center mb-8 text-[#97987E]">ENTRAR</h1>
             </div>
 
             

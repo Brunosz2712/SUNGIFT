@@ -3,7 +3,7 @@ export default function CriarConta() {
         <main className="flex flex-col justify-center items-center h-screen bg-gray-100 p-4">
             
             <div className="mb-12">
-                <h1 className="text-4xl text-[#97987E] font-semibold font-roboto">CADASTRO</h1>
+            <h1 className="text-5xl font-bold text-center mb-8 text-[#97987E]">CADASTRO</h1>
             </div>
 
             
