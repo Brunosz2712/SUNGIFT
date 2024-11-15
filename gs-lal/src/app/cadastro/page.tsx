@@ -1,4 +1,4 @@
-export default function CriarConta() {
+export default function Cadastro() {
     return (
         <main className="flex flex-col justify-center items-center h-screen bg-gray-100 p-4">
             
