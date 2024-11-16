@@ -18,7 +18,7 @@ export default function Cabecalho() {
             
             
             <h1 className="text-center absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 text-white text-3xl sm:text-4xl md:text-5xl font-bold z-10">
-                LIGHT AND LIFE
+            SUNGIFT
             </h1>
 
             

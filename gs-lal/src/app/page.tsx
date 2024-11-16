@@ -3,7 +3,7 @@ export default function Home() {
     <main className="flex flex-col md:flex-row gap-8 p-6">
       
       <div className="flex-1">
-        <h1 className="text-3xl font-bold text-[#97987E]">LIGHT AND LIFE</h1>
+        <h1 className="text-3xl font-bold text-[#97987E]">SUNGIFT</h1>
         <h3 className="text-xl font-semibold text-[#97987E]">Energia para um Futuro Sustentável</h3>
         <br />
         <p>
