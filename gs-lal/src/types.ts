@@ -1,18 +1,21 @@
-// export type TipoDoacao = {
+// export type Doacao = {
     
 // }
 
-// export type TipoCadastro = {
+// export type TipoCdastro = {
     
 // }
 
-// export type TipoPlaca = {
+// exprt tye TipPaca = {
     
 // }
 
-// export type TipoWorkShop = {
-    
-// }
-
-
-// SERIA A API QUE RETORNA DE JAVA QUE FOI MAIS OU MENOS ASSIM QUE O PROFESSOR FEZ
+export type WorkShop = {
+  ID_WORKSHOPS: number;
+  DT_WORKSHOP: string;
+  TP_WORKSHOPS: string;
+  ST_WORKSHOP: string;
+  DS_WORKSHOP: string;
+  NM_WORKSHOP:  string;
+  NM_LOGRADOURO: string;
+}
