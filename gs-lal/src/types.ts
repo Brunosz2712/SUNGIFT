@@ -2,9 +2,18 @@
     
 // }
 
-// export type TipoCdastro = {
-    
-// }
+export type Condominio = {
+  ID_CONDOMINIO: number;
+  NM_CONDOMINIO: string;
+  NR_CEP: string;
+  NM_BAIRRO: string;
+  NM_ESTADO: string;
+  NM_CIDADE: string;
+  DS_COMPLEMENTO: string;
+  DS_SENHA: string;
+  NM_LOGRADOURO: string;
+  NM_EMAIL: string;
+}
 
 // exprt tye TipPaca = {
     

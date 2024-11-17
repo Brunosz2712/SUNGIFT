@@ -1,7 +1,7 @@
 "use client"
 import { WorkShop } from "@/types"
 import { useEffect, useState } from "react"
-import { MapIcon, CalendarIcon } from "@heroicons/react/outline"
+import { CalendarOutlined, PushpinOutlined } from "@ant-design/icons"
 
 export default function WorkShops() {
 
@@ -51,13 +51,13 @@ export default function WorkShops() {
                 <p className="text-sm text-gray-700 mt-1">{w.DS_WORKSHOP}</p>
               </div>
               <div className="mt-4 flex items-center space-x-2">
-                <MapIcon className="h-5 w-5 text-gray-600" />
+                <PushpinOutlined className="h-5 w-5 text-gray-600" />
                 <p className="text-sm font-semibold text-gray-800">
                   Local: {w.NM_LOGRADOURO}
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <CalendarIcon className="h-5 w-5 text-gray-600" />
+                <CalendarOutlined className="h-5 w-5 text-gray-600" />
                 <p className="text-sm text-gray-500">
                   Data: {new Date(w.DT_WORKSHOP).toLocaleDateString("pt-BR")}
                 </p>
@@ -86,13 +86,13 @@ export default function WorkShops() {
                 <p className="text-sm text-gray-700 mt-1">{w.DS_WORKSHOP}</p>
               </div>
               <div className="mt-4 flex items-center space-x-2">
-                <MapIcon className="h-5 w-5 text-gray-600" />
+                <PushpinOutlined className="h-5 w-5 text-gray-600" />
                 <p className="text-sm font-semibold text-gray-800">
                   Local: {w.NM_LOGRADOURO}
                 </p>
               </div>
               <div className="flex items-center space-x-2">
-                <CalendarIcon className="h-5 w-5 text-gray-600" />
+                <CalendarOutlined className="h-5 w-5 text-gray-600" />
                 <p className="text-sm text-gray-500">
                   Data: {new Date(w.DT_WORKSHOP).toLocaleDateString("pt-BR")}
                 </p>

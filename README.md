@@ -1,2 +1,2 @@
 # SUNGIFT
-npm install @heroicons/react
+npm install @ant-design/icons

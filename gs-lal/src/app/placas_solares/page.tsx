@@ -1,8 +1,9 @@
-// src/app/placas_solares/page.tsx
+"use client"
 export default function PlacasSolares() {
     return (
-        <div>
-            <h1>Placas Solares</h1>
-        </div>
+        <main>
+            <div></div>
+            <div></div>
+        </main>
     );
 }
