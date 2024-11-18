@@ -94,18 +94,19 @@ export default function Cadastro() {
 
 
     return (
-      <main className="flex flex-col justify-center items-center h-screen bg-gray-100 p-4">
+      <main className="flex flex-col justify-center items-center h-full bg-gray-100 p-4">
+
+        {successMessage && (
+          <div className="w-full max-w-[900px] p-4 mb-6 bg-[#48d9717a] text-[#4a4a4a] rounded-lg shadow-md text-center">
+            <p className="font-semibold text-lg">{successMessage}</p>
+          </div>
+        )}
+
         <div className="mb-12">
           <h1 className="text-5xl font-bold text-center mb-8 text-[#97987E]">
             CADASTRO
           </h1>
         </div>
-
-        {successMessage && (
-          <div className="w-full max-w-[900px] p-4 mb-6 bg-[#e5e7eb] text-[#4a4a4a] rounded-lg shadow-md text-center">
-            <p className="font-semibold text-lg">{successMessage}</p>
-          </div>
-        )}
 
         <form
           onSubmit={handleSubmit}

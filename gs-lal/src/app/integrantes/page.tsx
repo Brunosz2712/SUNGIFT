@@ -8,7 +8,7 @@ export default function Integrantes() {
     return (
       <main className="p-8 bg-[#f4f4f4]">
         <div>
-          <h1 className="text-5xl font-bold text-center mb-8 text-[#97987E]">
+          <h1 className="md:text-5xl text-3xl font-bold text-center mb-8 text-[#97987E]">
             INTEGRANTES
           </h1>
         </div>
