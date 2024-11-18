@@ -1,6 +1,11 @@
-// export type Doacao = {
-    
-// }
+export type Doacao = {
+  ID_DOACOES: number,
+  ID_CONDOMINIO: number,
+  ID_MATERIAIS: number,
+  NR_QUANTIDADE: number,
+  NR_DESCONTOS: number,
+  DT_DOACAO: string
+}
 
 export type Condominio = {
   ID_CONDOMINIO: number;
