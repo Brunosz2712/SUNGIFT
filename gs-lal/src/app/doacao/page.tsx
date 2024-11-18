@@ -4,8 +4,18 @@
 
 import { useState, useEffect } from 'react';
 import { PencilIcon, TrashIcon } from '@heroicons/react/outline';
+import { useAtom } from 'jotai';
+import { useRouter } from 'next/navigation';
+import { userAtom } from '@/atoms';
 
 export default function Doacao() {
+    const [user] = useAtom(userAtom)
+    const router = useRouter()
+
+    if (!user) {
+      router.push("/login")
+    } 
+    
     const [doacoes, setDoacoes] = useState([]);
     const [material, setMaterial] = useState('');
     const [quantidade, setQuantidade] = useState('');

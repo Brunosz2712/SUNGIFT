@@ -1,18 +1,4 @@
-"use client"
-import { useAtom } from "jotai"
-import { userAtom } from "@/atoms"
-import { useRouter } from "next/navigation"
-
 export default function Home() {
-  const [user] = useAtom(userAtom)
-  const router = useRouter()
-
-  if (!user) {
-    <h1>Voce nao esta logado!</h1>
-    router.push("/login")
-    return null
-  }
-  
   return (
     <main className="flex flex-col md:flex-row gap-8 p-6">
       <div className="flex-1">
