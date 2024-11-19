@@ -84,7 +84,7 @@ export default function Login() {
       </div>
 
       {successMessage && (
-        <div className="w-full max-w-[543px] p-4 mb-6 bg-[#e5e7eb] text-[#4a4a4a] rounded-lg shadow-md text-center">
+        <div className="w-full max-w-[900px] p-4 mb-6 bg-[#48d9717a] text-[#4a4a4a] rounded-lg shadow-md text-center">
           <p className="font-semibold text-lg">{successMessage}</p>
         </div>
       )}

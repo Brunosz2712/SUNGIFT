@@ -20,9 +20,13 @@ export type Condominio = {
   NM_EMAIL: string;
 }
 
-// exprt tye TipPaca = {
-    
-// }
+export type Produtos = {
+  ID_PRODUTOS: number,
+  NR_QUANTIDADE: number,
+  NR_PRECO: number,
+  DS_PRODUTO: string,
+  NM_PRODUTO: string
+}
 
 export type WorkShop = {
   ID_WORKSHOPS: number;
