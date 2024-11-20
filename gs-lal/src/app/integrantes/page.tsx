@@ -1,7 +1,4 @@
 import Image from 'next/image';
-import michelle from '@/public/img/michelle.jpeg';
-import luisa from '@/public/img/luisa.jpeg';
-import bruno from '@/public/img/bruno.png';
 import { GithubOutlined, LinkedinOutlined } from '@ant-design/icons';
 
 export default function Integrantes() {
@@ -22,9 +19,17 @@ export default function Integrantes() {
             </h1>
             <div className="w-[208px] h-[208px] bg-[#97987E] rounded-[200px] flex items-center justify-center">
               <Image
-                src={michelle}
+                src="/img/michelle.jpeg"
                 alt="Michelle"
-                className="rounded-full w-[170px] h-[170px] object-cover mt-10"
+                width={170}
+                height={170}
+                style={{
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginTop: "40px",
+                  height: "170px !important",
+                  width: "170px !important",
+                }}
               />
             </div>
             <nav>
@@ -58,9 +63,17 @@ export default function Integrantes() {
             </h1>
             <div className="w-[208px] h-[208px] bg-[#97987E] rounded-[200px] flex items-center justify-center">
               <Image
-                src={luisa}
+                src="/img/luisa.jpeg"
                 alt="Luisa"
-                className="rounded-full w-[170px] h-[170px] object-cover mt-10"
+                width={170}
+                height={170}
+                style={{
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginTop: "40px",
+                  height: "170px !important",
+                  width: "170px !important",
+                }}
               />
             </div>
             <nav>
@@ -91,14 +104,22 @@ export default function Integrantes() {
             </h1>
             <div className="w-[208px] h-[208px] bg-[#97987E] rounded-[200px] flex items-center justify-center">
               <Image
-                src={bruno}
+                src="/img/bruno.png"
                 alt="Bruno Souza"
-                className="rounded-full w-[170px] h-[170px] object-cover mt-10"
+                width={170}
+                height={170}
+                style={{
+                  borderRadius: "50%",
+                  objectFit: "cover",
+                  marginTop: "40px",
+                  height: "170px !important",
+                  width: "170px !important",
+                }}
               />
             </div>
             <nav>
               <ul className="grid grid-cols-2 text-center gap-2">
-                <li className="text-[#97987E] font-medium">555292</li>
+                <li className="text-[#97987E] font-medium">94346</li>
                 <li className="text-[#97987E] font-medium">1TDSPG</li>
                 <li className="text-[#97987E] font-medium">
                   <a href="https://github.com/Brunosz2712" target="_blank">
