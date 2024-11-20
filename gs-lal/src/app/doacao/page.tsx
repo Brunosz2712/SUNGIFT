@@ -5,7 +5,7 @@ import { useAtom } from 'jotai';
 import { useRouter } from 'next/navigation';
 import { userAtom } from '@/atoms';
 import type { Doacao } from '@/types';
-import { WarningOutlined } from '@ant-design/icons';
+import { InfoCircleOutlined } from '@ant-design/icons';
 
 export default function Doacao() {
     const [user] = useAtom(userAtom)
@@ -23,15 +23,18 @@ export default function Doacao() {
     if (!user) {
       const volta = setTimeout(() => {
         router.push("/login")
-      }, 3000)
+      }, 4000)
       return (
         <>
-          <div className="min-h-screen flex justify-center items-center">
-            <h1 className="p-8 bg-[#97987eae] text-white rounded-lg shadow-md text-center h-full text-3xl">
-              <WarningOutlined /> é necessario o login primeiro! <br />
-              Redirecionando para a página de login...
-            </h1>
-          </div>
+          <main className="min-h-screen flex justify-center flex-col items-center">
+            <div className=" bg-[#97987e7e] shadow-2xl flex flex-col items-center rounded-lg p-10">
+              <h1 className="font-bold flex gap-2 ">
+                <InfoCircleOutlined />
+                401: Login necessário
+              </h1>
+              <p>Redirecionando para a página de login...</p>
+            </div>
+          </main>
           {volta}
         </>
       )
@@ -87,8 +90,8 @@ export default function Doacao() {
           }
 
           setSuccessMessage("Doacao cadastrada com sucesso!")
-        } catch (error) {
-          console.error(error)
+        } catch (error: any) {
+          setErrors({ apiError: error.message })
         }
       }
 
@@ -99,6 +102,11 @@ export default function Doacao() {
             {successMessage && (
               <div className="w-full max-w-[900px] p-4 mb-6 bg-[#48d9717a] text-[#4a4a4a] rounded-lg shadow-md text-center">
                 <p className="font-semibold text-lg">{successMessage}</p>
+              </div>
+            )}
+            {Object.keys(errors).length > 0 && (
+              <div className="w-full max-w-[900px] p-4 mb-6 bg-[#d948487a] text-[#4a4a4a] rounded-lg shadow-md text-center">
+                <p className="font-semibold text-lg">{errors.apiError}</p>
               </div>
             )}
             <form onSubmit={handleSubmit}>

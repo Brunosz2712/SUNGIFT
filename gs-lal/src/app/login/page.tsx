@@ -60,10 +60,8 @@ export default function Login() {
       setTimeout(() => {
         router.push("/")
       }, 3000)
-    } catch (error) {
-      setErrors({
-        NM_EMAIL: "Erro ao realizar login. Tente novamente mais tarde.",
-      })
+    } catch (error: any) {
+      setErrors({ apiError: error.message })
     }
   }
 
@@ -86,6 +84,11 @@ export default function Login() {
       {successMessage && (
         <div className="w-full max-w-[900px] p-4 mb-6 bg-[#48d9717a] text-[#4a4a4a] rounded-lg shadow-md text-center">
           <p className="font-semibold text-lg">{successMessage}</p>
+        </div>
+      )}
+      {Object.keys(errors).length > 0 && (
+        <div className="w-full max-w-[900px] p-4 mb-6 bg-[#d948487a] text-[#4a4a4a] rounded-lg shadow-md text-center">
+          <p className="font-semibold text-lg">{errors.apiError}</p>
         </div>
       )}
 

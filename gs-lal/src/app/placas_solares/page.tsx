@@ -4,62 +4,68 @@ import { userAtom } from "@/atoms"
 import { useAtom } from "jotai"
 import { useEffect, useState } from "react"
 import { Doacao, Produtos } from "@/types"
-import { WarningOutlined } from "@ant-design/icons"
+import { InfoCircleOutlined} from "@ant-design/icons"
 
 export default function PlacasSolares() {
-    const [user] = useAtom(userAtom)
-    const router = useRouter()
-    const [doacao, setDoacao] = useState<Doacao[]>([])
-    const [produtos, setProdutos ] = useState<Produtos[]>([])
-    const descontoTotal = doacao.reduce((total, d) => total + d.NR_DESCONTOS, 0)
+  const [user] = useAtom(userAtom)
+  const router = useRouter()
+  const [doacao, setDoacao] = useState<Doacao[]>([])
+  const [produtos, setProdutos] = useState<Produtos[]>([])
+  const descontoTotal = doacao.reduce((total, d) => total + d.NR_DESCONTOS, 0)
 
-    if (!user) {
-      const volta = setTimeout(() => {
-        router.push("/login")
-      }, 3000)
-      return (
-        <>
-          <div className="min-h-screen flex justify-center items-center">
-            <h1 className="p-8 bg-[#97987eae] text-white rounded-lg shadow-md text-center h-full text-3xl">
-              <WarningOutlined />  é necessario o login primeiro! <br />
-              Redirecionando para a página de login...
+  if (!user) {
+    const volta = setTimeout(() => {
+      router.push("/login")
+    }, 4000)
+    return (
+      <>
+        <main className="min-h-screen flex justify-center flex-col items-center">
+          <div className=" bg-[#97987e7e] shadow-2xl flex flex-col items-center rounded-lg p-10">
+            <h1 className="font-bold flex gap-2 ">
+              <InfoCircleOutlined />
+              401: Login necessário
             </h1>
+            <p>
+              Redirecionando para a página de login...
+            </p>
           </div>
-          {volta}
-        </>
+        </main>
+        {volta}
+      </>
+    )
+  } else {
+    const chamadaApiDoacao = async () => {
+      const response = await fetch(
+        `http://localhost:8080/doacao/${user?.ID_CONDOMINIO}`
       )
-    } else {
-      const chamadaApiDoacao = async () => {
-        const response = await fetch(
-          `http://localhost:8080/doacao/${user?.ID_CONDOMINIO}`
-        )
-        const data = await response.json()
-        setDoacao(data)
-      }
+      const data = await response.json()
+      setDoacao(data)
+    }
 
-      const chamadaApiProdutos = async () => {
-        const response = await fetch(`http://localhost:8080/produtos`)
-        const data = await response.json()
-        setProdutos(data)
-      }
+    const chamadaApiProdutos = async () => {
+      const response = await fetch(`http://localhost:8080/produtos`)
+      const data = await response.json()
+      setProdutos(data)
+    }
 
-      useEffect(() => {
-        chamadaApiDoacao()
-        chamadaApiProdutos()
-      }, [])
+    useEffect(() => {
+      chamadaApiDoacao()
+      chamadaApiProdutos()
+    }, [])
 
-      return (
-        <main className="flex flex-col items-center justify-center min-h-screen bg-[#f4f4f4] py-8 px-4">
-          {/* Exibição do desconto total */}
-          <div className="text-2xl font-semibold text-[#505050] mb-6">
-            Total de Descontos Acumulados: {descontoTotal}%
-          </div>
+    return (
+      <main className="flex flex-col items-center justify-start min-h-screen bg-[#f4f4f4] py-8 px-4">
+        {/* Exibição do desconto total */}
+        <div className="text-2xl font-semibold text-[#505050] mb-6">
+          Total de Descontos Acumulados: {descontoTotal}%
+        </div>
 
-          {/* Exibição de produtos */}
-          <section className="w-full max-w-4xl bg-white rounded-lg shadow-md p-6">
-            <h2 className="text-xl font-bold text-[#505050] mb-4">
-              Lista de Produtos
-            </h2>
+        {/* Exibição de produtos */}
+        <section className="w-full max-w-4xl bg-white rounded-lg shadow-md p-6">
+          <h2 className="text-xl font-bold text-[#505050] mb-4">
+            Lista de Produtos
+          </h2>
+          <div className="grid justify-start gap-4 md:grid-cols-3 grid-cols-1">
             {Array.isArray(produtos) && produtos.length > 0 ? (
               produtos.map((produto) => {
                 const semEstoque = produto.NR_QUANTIDADE <= 0
@@ -113,8 +119,9 @@ export default function PlacasSolares() {
             ) : (
               <p className="text-[#707070]">Nenhum produto encontrado.</p>
             )}
-          </section>
-        </main>
-      )
-    }
+          </div>
+        </section>
+      </main>
+    )
+  }
 }

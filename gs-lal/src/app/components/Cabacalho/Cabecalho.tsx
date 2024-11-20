@@ -1,9 +1,9 @@
 "use client"
 import Image from "next/image"
-import cabecalho from "@/public/img/img-cabecalho.png"
 import Menu from "../Menu/Menu"
 import { userAtom } from "@/atoms"
 import { useAtom } from "jotai"
+import { SunOutlined } from "@ant-design/icons"
 
 export default function Cabecalho() {
   const [user] = useAtom(userAtom)
@@ -12,7 +12,7 @@ export default function Cabecalho() {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 w-full h-full opacity-60">
         <Image
-          src={cabecalho}
+          src="/img/img-cabecalho.png"
           alt="Cabeçalho-img"
           objectFit="cover"
           fill
@@ -23,7 +23,11 @@ export default function Cabecalho() {
       {/* Conteúdo centralizado */}
       <div className="z-10 flex flex-col items-center text-white text-center">
         {/* Título */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold">SUNGIFT</h1>
+        <h1 className="text-6xl font-bold gap-3 flex">
+          <SunOutlined/>
+          SUNGIFT
+        </h1>
+        <p className="mt-3">Energia para um futuro sustentável!</p>
 
         {/* Mensagem Condicional */}
         {user ? (
