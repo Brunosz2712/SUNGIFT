@@ -23,13 +23,7 @@ export default function Integrantes() {
               alt="Michelle"
               width={170}
               height={170}
-              style={{
-                borderRadius: '50%',
-                objectFit: 'cover',
-                marginTop: '40px',
-                height: '170px !important',
-                width: '170px !important',
-              }}
+              className="custom-image"
             />
           </div>
           <nav>
@@ -64,13 +58,7 @@ export default function Integrantes() {
               alt="Luisa"
               width={170}
               height={170}
-              style={{
-                borderRadius: '50%',
-                objectFit: 'cover',
-                marginTop: '40px',
-                height: '170px !important',
-                width: '170px !important',
-              }}
+              className="custom-image"
             />
           </div>
           <nav>
@@ -100,16 +88,10 @@ export default function Integrantes() {
           <div className="w-[208px] h-[208px] bg-[#97987E] rounded-[200px] flex items-center justify-center">
             <Image
               src="/img/bruno.png"
-              alt="Bruno Souza"
+              alt="Bruno"
               width={170}
               height={170}
-              style={{
-                borderRadius: '50%',
-                objectFit: 'cover',
-                marginTop: '40px',
-                height: '170px !important',
-                width: '170px !important',
-              }}
+              className="custom-image"
             />
           </div>
           <nav>
