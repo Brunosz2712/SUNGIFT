@@ -1,9 +1,9 @@
-"use client"
-import Image from "next/image"
-import Menu from "../Menu/Menu"
-import { userAtom } from "@/atoms"
-import { useAtom } from "jotai"
-import { SunOutlined } from "@ant-design/icons"
+'use client'
+import Image from 'next/image'
+import Menu from '../Menu/Menu'
+import { userAtom } from '@/atoms'
+import { useAtom } from 'jotai'
+import { SunOutlined } from '@ant-design/icons'
 
 export default function Cabecalho() {
   const [user] = useAtom(userAtom)
@@ -24,7 +24,7 @@ export default function Cabecalho() {
       <div className="z-10 flex flex-col items-center text-white text-center">
         {/* Título */}
         <h1 className="text-6xl font-bold gap-3 flex">
-          <SunOutlined/>
+          <SunOutlined />
           SUNGIFT
         </h1>
         <p className="mt-3">Energia para um futuro sustentável!</p>
@@ -54,5 +54,4 @@ export default function Cabecalho() {
       </div>
     </header>
   )
-
 }

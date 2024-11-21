@@ -1,25 +1,25 @@
-"use client"
+'use client'
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { userAtom } from "@/atoms"
-import { useAtom } from "jotai"
+import { useState } from 'react'
+import { useRouter } from 'next/navigation'
+import { userAtom } from '@/atoms'
+import { useSetAtom } from 'jotai'
+import Link from 'next/link'
 
 export default function Login() {
   const [formData, setFormData] = useState({
-    NM_EMAIL: "",
-    DS_SENHA: "",
+    NM_EMAIL: '',
+    DS_SENHA: '',
   })
   const [errors, setErrors] = useState<{ [key: string]: string }>({})
-  const [successMessage, setSuccessMessage] = useState("")
-  const [user, setUser] = useAtom(userAtom)
+  const [successMessage, setSuccessMessage] = useState('')
+  const setUser = useSetAtom(userAtom)
   const router = useRouter()
 
   const validateLogin = () => {
-    let newErrors: { [key: string]: string } = {}
-    if (!formData.NM_EMAIL) newErrors.NM_EMAIL = "E-mail é obrigatório."
-    if (!formData.DS_SENHA) newErrors.DS_SENHA = "Senha é obrigatória."
+    const newErrors: { [key: string]: string } = {}
+    if (!formData.NM_EMAIL) newErrors.NM_EMAIL = 'E-mail é obrigatório.'
+    if (!formData.DS_SENHA) newErrors.DS_SENHA = 'Senha é obrigatória.'
     return newErrors
   }
 
@@ -35,33 +35,37 @@ export default function Login() {
       const response = await fetch(
         `http://localhost:8080/condominios/${formData.NM_EMAIL}`,
         {
-          method: "GET",
-          headers: { "Content-Type": "application/json" },
-        }
+          method: 'GET',
+          headers: { 'Content-Type': 'application/json' },
+        },
       )
 
       if (!response.ok) {
-        setErrors({ NM_EMAIL: "E-mail ou senha incorretos." })
+        setErrors({ NM_EMAIL: 'E-mail ou senha incorretos.' })
         return
       }
 
       const userData = await response.json()
 
       if (userData.DS_SENHA !== formData.DS_SENHA) {
-        setErrors({ DS_SENHA: "E-mail ou senha incorretos." })
+        setErrors({ DS_SENHA: 'E-mail ou senha incorretos.' })
         return
       }
 
       setUser(userData)
       setSuccessMessage(
-        "Login realizado com sucesso! Redirecionando para a Página Inicial..."
+        'Login realizado com sucesso! Redirecionando para a Página Inicial...',
       )
 
       setTimeout(() => {
-        router.push("/")
+        router.push('/')
       }, 3000)
-    } catch (error: any) {
-      setErrors({ apiError: error.message })
+    } catch (error) {
+      if (error instanceof Error) {
+        setErrors({ apiError: error.message })
+      } else {
+        setErrors({ apiError: 'Erro desconhecido.' })
+      }
     }
   }
 
@@ -148,7 +152,7 @@ export default function Login() {
 
         <div className="text-center mt-6">
           <p className="text-[#505050]">
-            Não tem uma conta?{" "}
+            Não tem uma conta?{' '}
             <Link href="/cadastro" className="text-[#97987E] font-semibold">
               Cadastre-se
             </Link>
