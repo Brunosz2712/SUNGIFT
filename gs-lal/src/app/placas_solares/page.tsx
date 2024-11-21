@@ -33,11 +33,17 @@ export default function PlacasSolares() {
       chamadaApiDoacao()
       chamadaApiProdutos()
     }
-  }, [user, chamadaApiDoacao, chamadaApiProdutos])
+  }, [user])
 
-  const volta = setTimeout(() => {
-    router.push('/login')
-  }, 4000)
+  useEffect(() => {
+    if (!user) {
+      const timeout = setTimeout(() => {
+        router.push('/login')
+      }, 4000)
+
+      return () => clearTimeout(timeout)
+    }
+  }, [user, router])
 
   if (!user) {
     return (
@@ -51,7 +57,6 @@ export default function PlacasSolares() {
             <p>Redirecionando para a página de login...</p>
           </div>
         </main>
-        {volta}
       </>
     )
   }

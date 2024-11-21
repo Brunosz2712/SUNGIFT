@@ -32,11 +32,17 @@ export default function Doacao() {
     if (user) {
       chamadaApi()
     }
-  }, [user, chamadaApi])
+  }, [user])
 
-  const volta = setTimeout(() => {
-    router.push('/login')
-  }, 4000)
+  useEffect(() => {
+    if (!user) {
+      const timeout = setTimeout(() => {
+        router.push('/login')
+      }, 4000)
+
+      return () => clearTimeout(timeout)
+    }
+  }, [user, router])
 
   if (!user) {
     return (
@@ -50,7 +56,6 @@ export default function Doacao() {
             <p>Redirecionando para a página de login...</p>
           </div>
         </main>
-        {volta}
       </>
     )
   }
