@@ -4,14 +4,15 @@
 Este é um projeto web desenvolvido em React que apresenta informações sobre a empresa **SUNGFIT**. O projeto inclui funcionalidades como criação de conta, login, doações, workshop e compra de placas solares.
 
 ## 📝 Sumário
-- [Descrição](#descrição)
-- [Requisitos](#requisitos)
-- [Instalação](#instalação)
-- [Funcionalidades](#funcionalidades)
-- [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Autores](#autores)
-- [Links de Vídeos](#links-de-vídeos)
-- [Links da Vercel](#links-da-vercel)
+- [Descrição](##descrição)
+- [Requisitos](##requisitos)
+- [Instalação](##instalação)
+- [API](##API)
+- [Funcionalidades](##funcionalidades)
+- [Tecnologias Utilizadas](##tecnologias-utilizadas)
+- [Autores](##autores)
+- [Links de Vídeos](##links-de-vídeos)
+- [Links da Vercel](##links-da-vercel)
 
 ## 📄 Descrição
 
@@ -33,6 +34,12 @@ Antes de começar, certifique-se de ter o seguinte instalado em sua máquina:
     npm install (para instalar todas as dependências do projeto)
     npm run dev (para iniciar o programa web)
     http://localhost:3000 (para as integrações funcionarem de acordo com o que foi feito, é necessário está com main iniciado em java juntamente com o projeto de front-end)
+
+## API
+Credênciais para conectar em banco de dados
+usuario: rm555292
+senha: 070905
+[GItHub JAVA](https://github.com/ludanii/SunGift_Java.git)
 
 ## ✨ Funcionalidades
 Página Inicial: Exibe informações sobre a SUNGIFT, com a missão e valores.
